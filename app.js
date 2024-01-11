@@ -1,23 +1,9 @@
-const calculator = {
-  plus: function (a, b) {
-    return a + b;
-  },
-  minus: function (a, b) {
-    return a - b;
-  },
-  times: function (a, b) {
-    return a * b;
-  },
-  divide: function (a, b) {
-    return a / b;
-  },
-  power: function (a, b) {
-    return a ** b;
-  },
-};
+const age = parseInt(prompt("How old are you?"));
 
-const plusResult = calculator.plus(5, 2);
-const minusResult = calculator.minus(plusResult, 10);
-const timesResult = calculator.times(10, minusResult);
-const divideResult = calculator.divide(timesResult, plusResult);
-const powerResult = calculator.power(divideResult, minusResult);
+if (isNaN(age)) {
+  console.log("Please write a number");
+} else if (age < 18) {
+  console.log("You are too young.");
+} else {
+  console.log("You can drink");
+}
