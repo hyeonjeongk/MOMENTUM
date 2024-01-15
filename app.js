@@ -1,5 +1,3 @@
-const title = document.getElementById("title");
-
-title.innerText = "Got you!";
-console.log(title.id);
-console.log(title.className);
+const title = document.querySelector("div.hello:first-child h1");
+console.dir(title);
+title.style.color = "blue";
