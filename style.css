@@ -1,3 +1,12 @@
 body {
     background-color: beige;
 }
+
+h1 {
+    color: cornflowerblue;
+    transition: color .5s ease-in-out;  /* 0.5초 간격으로 색 천천히 바뀌는 효과 */
+}
+
+.active {
+    color: tomato;
+}
