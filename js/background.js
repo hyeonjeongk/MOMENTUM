@@ -13,8 +13,14 @@ const images = [
 
 const chosenImage = images[Math.floor(Math.random() * images.length)];
 
-const bgImage = document.createElement("img");
+document.body.style.backgroundImage = `url(img/${chosenImage})`;
+document.body.style.backgroundPosition = "top";
+document.body.style.backgroundRepeat = "no-repeat";
+document.body.style.backgroundSize = "cover";
+document.body.style.backgroundAttachment = "fixed";
 
-bgImage.src = `img/${chosenImage}`;
+// const bgImage = document.createElement("img");
 
-document.body.appendChild(bgImage);
+// bgImage.src = `img/${chosenImage}`;
+
+// document.body.appendChild(bgImage);
