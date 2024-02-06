@@ -3,6 +3,15 @@ const toDoInput = toDoForm.querySelector("input");
 // const toDoInput = document.querySelector("#todo-form input") : 윗줄과 동일한 결과
 const toDoList = document.getElementById("todo-list");
 
+const TODOS_KEY = "toDos";
+
+let toDos = []; // to do 항목들 저장할 array
+
+function saveToDos() {
+  // to do 항목들을 local storage에 저장
+  localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
+}
+
 function deleteToDo(event) {
   // console.dir(event.target.parentElement.innerText);
   const li = event.target.parentElement;
@@ -29,8 +38,22 @@ function handleToDoSubmit(event) {
   // 사용자가 to do 입력 후 enter 누르면 실행될 함수
   event.preventDefault();
   const newTodo = toDoInput.value; // 새로운 변수에 toDoInput의 value 복사
-  toDoInput.value = "";
+  toDoInput.value = ""; // input창 비우기
+  toDos.push(newTodo); // toDos array에 항목들 넣기
   paintToDo(newTodo);
+  saveToDos(); // toDos array를 local storage에 저장
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
+
+function sayHello(item) {
+  console.log("this is the turn of", item);
+}
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+console.log(savedToDos);
+if (savedToDos !== null) {
+  const parsedToDos = JSON.parse(savedToDos);
+  toDos = parsedToDos; // localStorage에 저장된 todo가 있으면 이전값 복원
+  parsedToDos.forEach(paintToDo);
+}
