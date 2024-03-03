@@ -1,3 +1,110 @@
+body {
+    color: white;
+}
+
+.center {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .hidden {
     display: none;
+}
+
+#clock {
+    font-size: 10em;
+    margin-bottom: 0;
+}
+
+#login-input {
+    background: none;
+    border: none;
+    border-bottom: 3px solid #fff;
+    color: white;
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+#login-input::placeholder {
+    color: #fff;
+    opacity: 0.7;
+    text-align: center;
+    text-shadow: 0 0 10px black;
+}
+
+#login-input:focus {
+    outline: none;
+    text-align: center;
+}
+
+#greeting {
+    font-size: 48px;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+
+#todo-form input {
+    background: none;
+    border: none;
+    border-bottom: 2.5px solid #fff;
+    color: white;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+#todo-form input::placeholder {
+    color: #fff;
+    opacity: 0.7;
+    text-align: center;
+    text-shadow: 0 0 10px black;
+}
+
+#todo-form input:focus {
+    outline: none;
+    text-align: center;
+}
+
+#todo-list li {
+    font-size: 32px;
+}
+
+#todo-list li::marker {
+    content:"❤︎ "
+}
+
+#todo-list button {
+    border: none;
+    background: none;
+    /* text-align: center; */
+
+    color: white;
+    font-size: 32px;
+}
+
+#quote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+#quote span:first-child {
+    font-style: italic;
+    font-size: 18px;
+    text-shadow: 0 0 10px black;
+}
+
+#quote span:last-child {
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+#weather {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 18px;
+    font-style: italic;
 }

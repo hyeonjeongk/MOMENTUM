@@ -29,7 +29,7 @@ function paintToDo(newTodo) {
   span.innerText = newTodo.text; // span의 text변경(사용자가 입력한 newTodo값)
 
   const button = document.createElement("button");
-  button.innerText = "❌"; // button의 text변경
+  button.innerText = "x"; // button의 text변경
   button.addEventListener("click", deleteToDo); // 삭제버튼 클릭시 실행
 
   li.appendChild(span); // span을 li 내부로
